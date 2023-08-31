@@ -1,0 +1,33 @@
+.item {
+    min-width: 30rem;
+    padding: 40px;
+    margin: 0 7rem;
+    position: relative;
+}
+
+.item img {
+    min-width: 160%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.inner-carousel {
+    display: flex;
+    /* background: rgb(15, 130, 94); */
+}
+
+.carousel {
+    cursor: grab;
+    overflow: hidden;
+    margin: 10% 10%;
+
+}
+
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    top: 100px;
+    left: 70px;
+    color: white;
+}
