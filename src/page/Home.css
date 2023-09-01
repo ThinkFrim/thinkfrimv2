@@ -13,6 +13,28 @@
     z-index: -1;
 }
 
-.content {
-   
+.content {}
+
+.input-file::before {
+    content: 'Add your attachment';
+    display: inline-block;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    color: white;
+    font-weight: 300;
+    font-size: 15px;
 }
+
+.input-file::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.input-file:hover::before {
+    border-color: black;
+  }
+  .input-file:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }

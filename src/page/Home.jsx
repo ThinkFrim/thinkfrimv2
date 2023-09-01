@@ -6,12 +6,17 @@ import laptop from "../images/Laptop.svg";
 import backgroundImg from "../images/Angularcolor.png";
 import ServiceImg from "../images/Service.svg";
 import aboutImg from "../images/aboutus.svg";
-import video from '../images/video/video.mp4';
+import video from "../images/video/video.mp4";
 
-import { contactData, imageData, serviceData, socialIcons } from "../data/dummy.js";
+import {
+  contactData,
+  imageData,
+  serviceData,
+  socialIcons,
+} from "../data/dummy.js";
 
 import CarouselMotion from "../components/carouselMotion/CarouselMotion";
-import './Home.css'
+import "./Home.css";
 
 const Home = () => {
   return (
@@ -126,9 +131,11 @@ const Home = () => {
             <div>
               <p className="text-white leading-relaxed space-x-2 text-xl">
                 Lorem ipsumNeque porro quisquam est qui do lorem ipsum <br />
-                quia dolor sit amet, Neque porro elit NeDque porro Lorem ipsum <br />
+                quia dolor sit amet, Neque porro elit NeDque porro Lorem ipsum{" "}
                 <br />
-                Neque porro Neque porro Neque porro quisquam est qui do lorem ipsum quia dolor sit <br className="leading-relaxed" />
+                <br />
+                Neque porro Neque porro Neque porro quisquam est qui do lorem
+                ipsum quia dolor sit <br className="leading-relaxed" />
                 amet, Lorem ipsum Neque quis ipsum{" "}
               </p>
             </div>
@@ -144,7 +151,9 @@ const Home = () => {
         <div>
           <div>
             <h1 className="text-5xl text-white pb-5">Projects</h1>
-            <h2 className="text-[#BEBEBE] text-xl">showcase of our latest projects</h2>
+            <h2 className="text-[#BEBEBE] text-xl">
+              showcase of our latest projects
+            </h2>
           </div>
           <CarouselMotion />
         </div>
@@ -152,31 +161,82 @@ const Home = () => {
 
       {/* Contact */}
       <div className="video-background h-screen" id="Contact">
-        <video src={video} type='video/mp4' autoPlay loop muted className="video" />
-        <div className="flex items-center justify-between mt-24 mx-24">
+        <video
+          src={video}
+          type="video/mp4"
+          autoPlay
+          loop
+          muted
+          className="video"
+        />
+        <div className="flex items-center justify-between mt-40 mx-24">
           <div>
-            <h1 className="text-white text-6xl">Do You Have A Project ?</h1>
+            <h1 className="text-white text-6xl leading-relaxed">
+              Do You Have A Project <br /> We Would Love <br /> To Help ?
+            </h1>
           </div>
           <div className="content">
-            <div className="bg-black p-24 w-[40vw] h-[80vh]">
-              <div>
-                <div className="flex flex-wrap gap-5 item-center">
-                  {
-                    contactData.map((item, index) => (
-                      <div className="flex" key={index}>
-                        <button className="border-2 p-3 rounded-lg text-sm border-white text-white">{item.option}</button>
-                      </div>
-                    ))
-                  }
+            <div className="">
+              <div className="max-w-xl bg-black p-10 rounded-md shadow-lg">
+                <div className="flex justify-between space-x-4">
+                  <button className="border-2 text-white border-white px-2 py-2">
+                    UI/UX
+                  </button>
+                  <button className="border-2 text-white border-white px-2 py-2">
+                    Mobile Dev
+                  </button>
+                  <button className="border-2 text-white border-white px-2 py-2">
+                    Web Dev
+                  </button>
+                  <button className="border-2 text-white border-white px-2 py-2">
+                    SaaS Projects
+                  </button>
                 </div>
+
+                <form className="mt-6">
+                  <div className="mb-4">
+                    <input
+                      className="border-b-2 bg-transparent border-[#BEBEBE] w-full py-2 px-3 text-white leading-tight focus:outline-none"
+                      type="text"
+                      placeholder="Your Name"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <input
+                      className="border-b-2 bg-transparent border-[#BEBEBE] w-full py-2 px-3 text-white leading-tight focus:outline-none"
+                      type="email"
+                      placeholder="Your Email"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <div className="relative">
+                      <textarea
+                        className="border-b-2 bg-transparent border-[#BEBEBE] w-full py-2 px-3 text-white leading-tight focus:outline-none resize-none"
+                        rows="4"
+                        placeholder="Tell us about your project"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <input type="file" className="input-file" />
+                  </div>
+
+                  <button
+                    className="border-2 border-[#F9BC60] bg-transparent px-4 py-2 text-white rounded-md"
+                    type="submit"
+                  >
+                    Send Request
+                  </button>
+                </form>
               </div>
-              {/* Form */}
-              <form className="flex-col">
-              <label className="text-white">Your Name</label>
-              <input type="text" className="bg-transparent border-b-2 border-b-[#]" />
-              </form>
             </div>
           </div>
+        </div>
+        <div className="mt-24 mx-24 text-xl">
+          <a href="mailto:thinkfrim@gmail.com" className="text-white">thinkfrim@gmail.com</a>
         </div>
       </div>
     </div>
