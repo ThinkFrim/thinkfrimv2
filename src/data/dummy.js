@@ -11,13 +11,25 @@ import prospermetrics from '../images/prospermetrics.png'
 // Social Media Icons
 export const socialIcons = [
     {
-        icon: <FaDiscord />,
+        icon: (
+            <a href="https://discord.gg/pWNngqxx">
+                <FaDiscord />
+            </a>
+        ),
     },
     {
-        icon: <BsInstagram />,
+        icon: (
+            <a href="https://www.instagram.com/thinkfrim/">
+                <BsInstagram />
+            </a>
+        )
     },
     {
-        icon: <AiFillGithub />,
+        icon: (
+            <a href="https://github.com/ThinkFrim">
+                <AiFillGithub />
+            </a>
+        )
     },
 ];
 
@@ -73,22 +85,4 @@ export const imageData = [
 
     },
 
-]
-
-export const contactData = [
-    {
-        option: 'UI/UX',
-    },
-
-    {
-        option: 'Mobile Dev',
-    },
-
-    {
-        option: 'Saas Project',
-    },
-
-    {
-        option: 'Web Dev',
-    }
 ]

@@ -25,7 +25,7 @@ const NavItem = ({ title, active, onItemClick }) => {
     );
 };
 const Nav = () => {
-    // importing currentColor useState("About")
+    // importing currentColor
     const { currentColor, handleItemClick } = useStateContext();
 
     return (

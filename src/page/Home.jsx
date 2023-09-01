@@ -1,22 +1,22 @@
 import React from "react";
 
-import { Button, Carousel, CarouselComponent, Nav } from "../components";
+import { Button, Carousel, CarouselComponent, Footer, Nav } from "../components";
 
 import laptop from "../images/Laptop.svg";
 import backgroundImg from "../images/Angularcolor.png";
 import ServiceImg from "../images/Service.svg";
 import aboutImg from "../images/aboutus.svg";
 import video from "../images/video/video.mp4";
+import mail from '../images/icons/contact.svg'
 
 import {
-  contactData,
-  imageData,
   serviceData,
   socialIcons,
 } from "../data/dummy.js";
 
 import CarouselMotion from "../components/carouselMotion/CarouselMotion";
 import "./Home.css";
+import { HashLink } from "react-router-hash-link";
 
 const Home = () => {
   return (
@@ -43,13 +43,18 @@ const Home = () => {
         {/* Buttons */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <Button
-              text="Get In Touch"
-              className="text-black bg-underline-bg"
-            />
-            <button className="border-[#F9BC60] border-2 p-5 px-10 rounded-lg text-xl text-white font-medium">
-              Discover
-            </button>
+            <HashLink smooth to="#Contact">
+              <Button
+                text="Get In Touch"
+                icon={mail}
+                className="text-black bg-underline-bg" />
+                
+            </HashLink>
+            <HashLink smooth to="#Service" >
+              <button className=" border-[#F9BC60] border-2 p-5 px-10 rounded-lg text-xl text-white font-medium">
+                Discover
+              </button>
+            </HashLink>
           </div>
 
           {/* Social Icons */}
@@ -239,6 +244,8 @@ const Home = () => {
           <a href="mailto:thinkfrim@gmail.com" className="text-white">thinkfrim@gmail.com</a>
         </div>
       </div>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
