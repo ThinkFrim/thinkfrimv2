@@ -25,9 +25,21 @@ const Footer = () => {
                         </div>
                         <div className=''>
                             <h1 className='text-xl pb-5'>Socials</h1>
-                            <h3>Discord</h3>
-                            <h3>Instagram</h3>
-                            <h3>Github</h3>
+                            <h3>
+                                <a href="https://discord.gg/pWNngqxx">
+                                    Discord
+                                </a>
+                            </h3>
+                            <h3>
+                                <a href="https://www.instagram.com/thinkfrim/">
+                                    Instagram
+                                </a>
+                            </h3>
+                            <h3>
+                                <a href="https://github.com/ThinkFrim">
+                                    Github
+                                </a>
+                            </h3>
                         </div>
                     </div>
                 </div>

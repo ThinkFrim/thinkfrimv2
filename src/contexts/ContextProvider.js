@@ -5,13 +5,15 @@ const StateContext = createContext();
 
 export const ContextProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
+    const [menuOpen, setMenuOpen] = useState(false)
     const [activeMenu, setActiveMenu] = useState("");
     const [currentColor, setCurrentColor] = useState("/")
     const [currentIndex, setCurrentIndex] = useState(0)
 
-    // checking length
-
-
+    // MenuBar
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    }
 
     // ImageData
     const imageData = [
@@ -61,6 +63,9 @@ export const ContextProvider = ({ children }) => {
                 setCurrentIndex,
                 handlePrevClick,
                 handleNextClick,
+                menuOpen, 
+                setMenuOpen,
+                toggleMenu
 
             }}
         >

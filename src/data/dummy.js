@@ -12,7 +12,7 @@ import prospermetrics from '../images/prospermetrics.png'
 export const socialIcons = [
     {
         icon: (
-            <a href="https://discord.gg/pWNngqxx">
+            <a className='' href="https://discord.gg/pWNngqxx">
                 <FaDiscord />
             </a>
         ),
@@ -26,7 +26,7 @@ export const socialIcons = [
     },
     {
         icon: (
-            <a href="https://github.com/ThinkFrim">
+            <a className='hidden md:block' href="https://github.com/ThinkFrim">
                 <AiFillGithub />
             </a>
         )

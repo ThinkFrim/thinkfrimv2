@@ -1,79 +1,98 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 
-import { Button, Carousel, CarouselComponent, Footer, Nav } from "../components";
+import { Button } from "../components";
 
 import laptop from "../images/Laptop.svg";
 import backgroundImg from "../images/Angularcolor.png";
 import ServiceImg from "../images/Service.svg";
 import aboutImg from "../images/aboutus.svg";
 import video from "../images/video/video.mp4";
-import mail from '../images/icons/contact.svg'
+import mail from "../images/icons/contact.svg";
 
-import {
-  serviceData,
-  socialIcons,
-} from "../data/dummy.js";
+import { serviceData, socialIcons } from "../data/dummy.js";
 
 import CarouselMotion from "../components/carouselMotion/CarouselMotion";
 import "./Home.css";
 import { HashLink } from "react-router-hash-link";
+import { useMediaQuery } from "react-responsive";
 
-const Home = () => {
+const Home = ({ text }) => {
+  const isSmallScreen = useMediaQuery({ minWidth: 1024 });
+
+  const mainText = isSmallScreen ? (
+    <>
+      Transform your online image with, <br className="lg:hidden" /> a professional website.
+    </>
+  ) : (
+    <>
+      Elevating Dreams, <br className="lg:hidden" /> Crafting Digital Realities
+    </>
+  );
+
+  const subText = isSmallScreen ? (
+    <>
+      Get ahead of the competition with, <br className="" /> a custom built website
+    </>
+  ) : (
+    <>
+      ThinkFrim Your Gateway To <br /> Digital Future
+    </>
+  );
+
   return (
-    // Parent Holder
-    <div className="">
-      {/* Hero Section */}
-      <div className="bg-main-bg h-screen p-24 pt-10">
-        <Nav />
-        <div className="flex items-center gap-24">
+    <>
+      <div className="md:px-16 pt-5 pb-5 bg-main-bg h-fit">
+        <div className="md:flex-row lg:justify-normal flex flex-col justify-center items-center gap-5">
+          <div className="relative">
+            <h1 className="md:hidden relative text-[#ADC3FF] z-10 ">ThinkFrim</h1>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-20 inset-0 bg-[#ADC3FF] blur-md opacity-20"></div>
+          </div>
+
+
+          <div className="lg:text-left text-center text-white">
+            <h1
+              className={`"md:leading-relaxed md:text-4xl text-[2rem] mb-5`}
+            >
+              {mainText}
+            </h1>
+            <h2
+              className={`"md:leading-relaxed md:text-2xl text-[1rem]`}
+            >
+              {subText}
+            </h2>
+          </div>
           <div>
-            <h1 className="text-white text-5xl leading-normal">
-              Transform your online image,
-              <br className="" />
-              with a professional website.
-            </h1>
-            <h1 className="text-white text-3xl leading-normal">
-              Get ahead of the competition <br className="" /> with a
-              custom-built website
-            </h1>
+            <img src={laptop} alt="" className="w-full hidden lg:block" />
           </div>
-          <img src={laptop} alt="" className="w-full max-w-[45%]" />
         </div>
-
-        {/* Buttons */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <HashLink smooth to="#Contact">
-              <Button
-                text="Get In Touch"
-                icon={mail}
-                className="text-black bg-underline-bg" />
-                
-            </HashLink>
-            <HashLink smooth to="#Service" >
-              <button className=" border-[#F9BC60] border-2 p-5 px-10 rounded-lg text-xl text-white font-medium">
-                Discover
-              </button>
-            </HashLink>
+        <div className="flex flex-col-reverse lg:flex-row items-center lg:justify-between pt-20">
+          <div className="lg:px-0 px-5 lg:flex-row  max-md:container flex flex-col gap-5">
+            <Button
+              text="Get in touch"
+              icon={mail}
+              className="p-5 flex justify-center  bg-underline-bg gap-2 rounded-lg"
+            />
+            <Button
+              text="Discover"
+              className="p-5 text-white border-2 border-[#F9BC60] rounded-lg"
+            />
           </div>
-
-          {/* Social Icons */}
-          <div className="flex gap-5">
-            <h1 className="text-white">follow us</h1>
-            {socialIcons.map((items, index) => (
-              <div className="text-white text-xl" key={index}>
-                {items.icon}
-              </div>
-            ))}
+          <div className="lg:pb-0 flex gap-5 items-center justify-center pb-10">
+            <h1 className="text-white hidden lg:block">Follow us</h1>
+            <div className="lg:gap-5 text-xl flex gap-16 text-white translate-x-[20%]">
+              {socialIcons.map((item, index) => (
+                <div className="text-white" key={index}>
+                  {item.icon}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* service */}
-      <div
-        className="flex justify-between relative bg-secondary-bg p-24 pt-24 h-screen"
-        id="Service"
-      >
+      <div className="hidden flex justify-between relative bg-secondary-bg p-24 pt-24 h-screen" id="Service">
         <div className="absolute bottom-24 inset-0 -z-1">
           <img
             src={backgroundImg}
@@ -94,7 +113,7 @@ const Home = () => {
         <div className="z-20">
           {serviceData.map((item, index) => (
             <div
-              className={`flex gap-10 justify-between items-center mt-16 py-7 px-5 w-full md:w-[40vw] bg-[#21242C] rounded-lg cursor-pointer`}
+              className={`flex gap-10 justify-between items-center mt-16 py-7 px-5 w-full w-[40vw] bg-[#21242C] rounded-lg cursor-pointer`}
               key={index}
             >
               <div>
@@ -112,7 +131,10 @@ const Home = () => {
       </div>
 
       {/* About */}
-      <div className="relative h-screen bg-main-bg p-24 pt-24 " id="About">
+      <div
+        className="hidden relative h-screen bg-main-bg p-24 pt-24 "
+        id="About"
+      >
         <div className="absolute bottom-24 inset-0 -z-1">
           <img
             src={backgroundImg}
@@ -152,7 +174,7 @@ const Home = () => {
       </div>
 
       {/* Our Projects */}
-      <div className="h-screen bg-secondary-bg p-24 pt-24" id="Projects">
+      <div className="hidden h-screen bg-secondary-bg p-24 pt-24" id="Projects">
         <div>
           <div>
             <h1 className="text-5xl text-white pb-5">Projects</h1>
@@ -165,7 +187,7 @@ const Home = () => {
       </div>
 
       {/* Contact */}
-      <div className="video-background h-screen" id="Contact">
+      <div className="hidden video-background h-screen" id="Contact">
         <video
           src={video}
           type="video/mp4"
@@ -182,7 +204,7 @@ const Home = () => {
           </div>
           <div className="content">
             <div className="">
-              <div className="max-w-xl bg-black p-10 rounded-md shadow-lg">
+              <div className="max-w-xl bg-black p-10 rounded-shadow-lg">
                 <div className="flex justify-between space-x-4">
                   <button className="border-2 text-white border-white px-2 py-2">
                     UI/UX
@@ -230,7 +252,7 @@ const Home = () => {
                   </div>
 
                   <button
-                    className="border-2 border-[#F9BC60] bg-transparent px-4 py-2 text-white rounded-md"
+                    className="border-2 border-[#F9BC60] bg-transparent px-4 py-2 text-white rounded-xl"
                     type="submit"
                   >
                     Send Request
@@ -241,13 +263,20 @@ const Home = () => {
           </div>
         </div>
         <div className="mt-24 mx-24 text-xl">
-          <a href="mailto:thinkfrim@gmail.com" className="text-white">thinkfrim@gmail.com</a>
+          <a href="mailto:thinkfrim@gmail.com" className="text-white">
+            thinkfrim@gmail.com
+          </a>
         </div>
       </div>
-      {/* Footer */}
-      <Footer />
-    </div>
+    </>
   );
 };
 
 export default Home;
+
+{
+  /* <div className="relative pb-10 hidden">
+<h1 className="text-[#ADC3FF] relative">ThinkFrim</h1>
+<div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-3 inset-0  blur-bg-[#ADC3FF] opacity-20"></div>
+</div> */
+}

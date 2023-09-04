@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Button = ({ text, icon }) => {
+const Button = ({ text, icon, className, style }) => {
   return (
-    <button type='button' className='flex items-center gap-3 bg-underline-bg p-5 px-10 rounded-lg text-xl font-medium'>{text}
-    <img src={icon} alt="" />
-    </button>
+    <>
+      <button className={`${className}`} type='button' style={style}>{text}
+        <img src={icon} alt="" />
+      </button>
+    </>
   )
 }
 

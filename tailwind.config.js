@@ -9,9 +9,9 @@ module.exports = {
     extend: {
       backgroundColor: {
         'main-bg': '#0F0E17',
-        'secondary-bg': '#2F2D3C', 
-        'underline-bg': '#F9BC60' 
-        
+        'secondary-bg': '#2F2D3C',
+        'underline-bg': '#F9BC60'
+
       },
     },
   },
