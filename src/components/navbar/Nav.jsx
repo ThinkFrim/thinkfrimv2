@@ -35,6 +35,7 @@ const Nav = () => {
     const { currentColor, handleItemClick, } = useStateContext();
 
     return (
+        // try to add container with mx-auto 
         <nav className="p-10 px-10 relative z-1 bg-main-bg">
             <div className="flex items-center">
                 <HashLink to="/" className="flex items-center gap-2">
