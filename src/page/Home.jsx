@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 
-import { Button, CarouselComponent, Nav } from "../components";
+import { Button, CarouselComponent, Footer, Nav } from "../components";
 
 import laptop from "../images/Laptop.svg";
 import backgroundImg from "../images/Angularcolor.png";
@@ -64,7 +64,7 @@ const Home = ({ text }) => {
           </div>
           <div className="flex flex-col-reverse lg:flex-row items-center lg:justify-between">
             <div className="lg:px-0 px-5 lg:flex-row  flex flex-col gap-5">
-              <HashLink smooth to="#About" className="mx-auto">
+              <HashLink smooth to="#Contact" className="mx-auto">
                 <Button
                   text="Get in touch"
                   icon={mail}
@@ -140,25 +140,27 @@ const Home = ({ text }) => {
 
       {/* About */}
       <div className="bg-main-bg h-screen" id="About">
-        <div className="pt-16">
-          <div className="hidden">
+        <div className="pt-16 flex flex-col lg:flex-row items-center justify-between lg:mx-24">
+          <div className="hidden lg:block">
             <img src={aboutImg} alt="" />
           </div>
-          <div className="text-center">
+          <div className="text-center lg:text-left">
             <h1 className="pb-3 text-[#F9BC60] text-xl">About us</h1>
-            <h1 className="text-white text-3xl leading-relaxed">
+            <h1 className="text-white text-3xl leading-loose lg:text-5xl">
               We Bring <span className="text-[#F9bc60]">Creative</span> <br />{" "}
               Ideas To Life
             </h1>
-            <div className="my-5 w-[25%] mx-auto border-2 border-white" />
+            <div className="my-5 w-[25%] mx-auto lg: lg:mx-0 border-2 border-white"></div>
             <h1 className="pb-3 text-[#F9BC60] text-xl">We Love Creating</h1>
-            <p className="text-white px-5 md:px-0">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-              assumenda beatae ipsum laboriosam nisi,
+            <p className="text-white px-5 md:px-0 lg:text-xl">
+              Lorem ipsumNeque porro quisquam est qui do lorem ipsum quia dolor
+              <br />
+              sit amet, Neque porro elit NeDque porro Lorem ipsum Neque porro
               <br />
               <br />
-              quos ullam, cupiditate repudiandae fugit facere facilis nobis
-              similique sit dolor? Sapiente vel corporis debitis exercitationem.
+              Neque porro Neque porro quisquam est qui do lorem ipsum quia dolor
+              <br />
+              sit amet, Lorem ipsum Neque quis ipsum
             </p>
           </div>
         </div>
@@ -167,7 +169,7 @@ const Home = ({ text }) => {
       {/* Our Projects */}
       <div className="h-screen bg-secondary-bg p-24 pt-24" id="Projects">
         <div>
-          <div className="text-center">
+          <div className="text-center lg:text-left">
             <h1 className="text-5xl text-white pb-5">Projects</h1>
             <h2 className="text-[#BEBEBE] text-xl">
               showcase of our latest projects
@@ -187,87 +189,55 @@ const Home = ({ text }) => {
           muted
           className="video"
         />
-        <div className="flex-col items-center justify-between lg:mt-40 mx-24">
-          <div>
-            <h1 className="text-white text-3xl leading-relaxed">
-              Do You Have A Project <br className="hidden" /> We Would Love <br className="hidden" /> To Help ?
-            </h1>
-          </div>
-          <div className="content">
-            <div className="">
-              <div className="max-w-xl bg-black p-10 rounded-shadow-lg">
-                <div className="flex flex-wrap items-center gap-4 justify-between">
-                  <button className="border-2 text-white border-white px-2 py-2">
-                    UI/UX
-                  </button>
-                  <button className="border-2 text-white border-white px-2 py-2">
-                    Mobile Dev
-                  </button>
-                  <button className="border-2 text-white border-white px-2 py-2">
-                    Web Dev
-                  </button>
-                  <button className="border-2 text-white border-white px-2 py-2">
-                    SaaS Projects
-                  </button>
-                </div>
 
-                <form className="mt-6">
-                  <div className="mb-4">
-                    <input
-                      className="border-b-2 bg-transparent border-[#BEBEBE] w-full py-2 px-3 text-white leading-tight focus:outline-none"
-                      type="text"
-                      placeholder="Your Name"
-                    />
-                  </div>
+        <div className="pt-10 text-center px-2 flex flex-col items-center lg:flex-row md:justify-between md:text-left md:mx-24 lg:pt-24 video-background">
+          <h1 className="pb-5 text-white text-2xl leading-loose">
+            Have a Project ? <br className="hidden lg:block" /> We would love to
+            help
+          </h1>
 
-                  <div className="mb-4">
-                    <input
-                      className="border-b-2 bg-transparent border-[#BEBEBE] w-full py-2 px-3 text-white leading-tight focus:outline-none"
-                      type="email"
-                      placeholder="Your Email"
-                    />
-                  </div>
-
-                  <div className="mb-4">
-                    <div className="relative">
-                      <textarea
-                        className="border-b-2 bg-transparent border-[#BEBEBE] w-full py-2 px-3 text-white leading-tight focus:outline-none resize-none"
-                        rows="4"
-                        placeholder="Tell us about your project"
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <div className="mb-4">
-                    <input type="file" className="input-file" />
-                  </div>
-
-                  <button
-                    className="border-2 border-[#F9BC60] bg-transparent px-4 py-2 text-white rounded-xl"
-                    type="submit"
-                  >
-                    Send Request
-                  </button>
-                </form>
-              </div>
+          {/* Form  */}
+          <form className="py-5 flex flex-wrap justify-center gap-6 bg-black lg:flex-nowrap lg:flex-col lg:p-24 lg:justify-normal">
+            <div className="text-white flex-[1 0 130px]">
+              <button className="border-2 border-[#F9BC60] p-3 mx-2 my-2">
+                SaaS
+              </button>
+              <button className="border-2 border-[#F9BC60] p-3 mx-2 my-2">
+                Mobile Dev
+              </button>
+              <button className="border-2 border-[#F9BC60] p-3 mx-2 my-2">
+                Web Dev
+              </button>
+              <button className="border-2 border-[#F9BC60] p-3 mx-2 my-2">
+                UI UX
+              </button>
             </div>
-          </div>
-        </div>
-        <div className="mt-24 mx-24 text-xl">
-          <a href="mailto:thinkfrim@gmail.com" className="text-white">
-            thinkfrim@gmail.com
-          </a>
+            <input
+              type="text"
+              className="flex-[1 0 130px] bg-inherit text-white border-b-2 border-[#bebebe] py-2"
+              placeholder="your name"
+            />
+            <input
+              type="email"
+              className="flex-[1 0 130px] bg-inherit text-white border-b-2 border-[#bebebe] py-2"
+              placeholder="your email"
+            />
+            <textarea
+              type="text"
+              className="flex-[1 0 130px] bg-inherit text-white border-b-2 border-[#bebebe] py-2"
+              placeholder="your message"
+            />
+            <input type="file" className="input-file flex-[1 0 130px]" />
+            <Button 
+              text="Send Request"
+              className="text-white flex-[0 130px] border-2 border-[#F9BC60] p-3"
+            />
+          </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
 
 export default Home;
-
-{
-  /* <div className="relative pb-10 hidden">
-<h1 className="text-[#ADC3FF] relative">ThinkFrim</h1>
-<div className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-20 h-3 inset-0  blur-bg-[#ADC3FF] opacity-20"></div>
-</div> */
-}

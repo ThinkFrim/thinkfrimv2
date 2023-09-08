@@ -19,7 +19,7 @@
     content: 'Add your attachment';
     display: inline-block;
     border-radius: 3px;
-    padding: 5px 8px;
+    padding: 0 25px;
     outline: none;
     white-space: nowrap;
     cursor: pointer;
