@@ -31,3 +31,41 @@
     left: 70px;
     color: white;
 }
+
+
+@media (max-width: 768px) {
+
+    .item {
+        min-width: 30rem;
+        padding: 40px;
+        margin: 0 7rem;
+        position: relative;
+    }
+
+    .carousel-img {
+        width: 50vw;
+    }
+
+    .carousel {
+        border-bottom: 1px solid #F9BC60;
+    }
+}
+
+
+@media (max-width: 490px) {
+
+    .item {
+        min-width: 30rem;
+        padding: 40px;
+        margin: 0 7rem;
+        position: relative;
+    }
+
+     .item .carousel-img {
+        width: 30vw;
+    }
+
+    .carousel {
+        border-bottom: 1px solid #F9BC60;
+    }
+}

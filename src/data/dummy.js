@@ -2,7 +2,7 @@
 import { BsInstagram } from 'react-icons/bs';
 import { FaDiscord } from 'react-icons/fa';
 import { AiFillGithub } from "react-icons/ai";
-import uiux from '../images/icons/uiux.svg'
+import ux from '../images/icons/ux.svg'
 import brand from '../images/icons/brand.svg'
 import web from '../images/icons/web.svg'
 import codeAndT from '../images/code&t.png'
@@ -38,7 +38,7 @@ export const serviceData = [
     {
         title: 'UI UX Design',
         description: 'Transforming ideas into intuitive interfaces',
-        icon: uiux
+        icon: ux
 
     },
 
@@ -50,7 +50,7 @@ export const serviceData = [
 
     {
         title: 'Web Development',
-        description: "Web Development Solutions for Your Digital Future.",
+        description: "Development Solutions for Your Digital Future.",
         icon: web
     },
 ]
