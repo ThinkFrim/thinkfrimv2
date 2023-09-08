@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 
-import { Button, CarouselComponent, Footer, Nav } from "../components";
+import { Button, Footer, Nav } from "../components";
 
 import laptop from "../images/Laptop.svg";
 import backgroundImg from "../images/Angularcolor.png";
@@ -16,7 +16,6 @@ import CarouselMotion from "../components/carouselMotion/CarouselMotion";
 import "./Home.css";
 import { HashLink } from "react-router-hash-link";
 import { useMediaQuery } from "react-responsive";
-import { Carousel } from "react-responsive-carousel";
 
 const Home = ({ text }) => {
   const isSmallScreen = useMediaQuery({ minWidth: 1024 });
@@ -44,9 +43,9 @@ const Home = ({ text }) => {
   );
   return (
     <div className="">
-      <div className="md:px-16 bg-main-bg min-h-screen pb-5">
+      <div className="md:px-16 bg-main-bg min-h-screen pb-5" id="home">
         <Nav />
-        <div className="container mx-auto pt-16 lg:pt-10">
+        <div className="container mx-auto pt-16 h-full xl:pt-24">
           <div className="lg:flex-row lg:justify-normal flex flex-col items-center gap-5">
             <div className="relative">
               <h1 className="md:hidden relative text-[#ADC3FF] z-10">
@@ -103,7 +102,7 @@ const Home = ({ text }) => {
           />
         </div>
 
-        <div className="lg:p-16 lg:flex-row flex flex-col justify-between">
+        <div className="lg:p-16 xl:pt-24 lg:flex-row flex flex-col justify-between">
           <div className="pt-10 text-center lg:text-left z-10">
             <h1 className="pb-5 text-3xl text-white xl:text-5xl ">
               Services We Provide
@@ -139,8 +138,15 @@ const Home = ({ text }) => {
       </div>
 
       {/* About */}
-      <div className="bg-main-bg h-screen" id="About">
+      <div className="relative bg-main-bg h-screen" id="About">
         <div className="pt-16 flex flex-col lg:flex-row items-center justify-between lg:mx-24">
+          <div className="absolute bottom-0 inset-0 -z-1">
+            <img
+              src={backgroundImg}
+              alt=""
+              className="hidden lg:block object-cover w-full h-full"
+            />
+          </div>
           <div className="hidden lg:block">
             <img src={aboutImg} alt="" />
           </div>
@@ -228,7 +234,7 @@ const Home = ({ text }) => {
               placeholder="your message"
             />
             <input type="file" className="input-file flex-[1 0 130px]" />
-            <Button 
+            <Button
               text="Send Request"
               className="text-white flex-[0 130px] border-2 border-[#F9BC60] p-3"
             />
