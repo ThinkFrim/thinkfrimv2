@@ -35,41 +35,6 @@ const Nav = () => {
     <nav className="container mx-auto p-5 bg-main-bg">
       {/* Mobile */}
 
-<<<<<<< HEAD
-    return (
-        // try to add container with mx-auto 
-        <nav className="p-10 px-10 relative z-1 bg-main-bg">
-            <div className="flex items-center">
-                <HashLink to="/" className="flex items-center gap-2">
-                    <img src={LogoImage} alt="" className="w-full" />
-                    <h1 className="text-white text-4xl hidden lg:block">ThinkFrim</h1>
-                </HashLink>
-                <div className="hidden lg:flex gap-5 md:pl-28">
-                    <NavItem
-                        title="About"
-                        active={currentColor === "About"}
-                        onItemClick={handleItemClick}
-                    />
-                    <NavItem
-                        title="Service"
-                        active={currentColor === "Service"}
-                        onItemClick={handleItemClick}
-                    />
-                    <NavItem
-                        title="Projects"
-                        active={currentColor === "Projects"}
-                        onItemClick={handleItemClick}
-                    />
-                    <NavItem
-                        title="Contact"
-                        active={currentColor === "Contact"}
-                        onItemClick={handleItemClick}
-                    />
-                </div>
-            </div>
-        </nav>
-        // <nav className="flex flex-col md:flex-row items-center">
-=======
       <div className="lg:hidden block mx-auto py-2 px-3 rounded-full container bg-[#3f42525c] ">
         <div className="flex justify-between items-center">
           <div>
@@ -114,7 +79,6 @@ const Nav = () => {
           </div>
         </div>
       </div>
->>>>>>> d570271 (finishing new sections responsive)
 
       {/* Desktop */}
 
