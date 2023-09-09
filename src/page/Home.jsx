@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 
-import { Button, Footer, Nav } from "../components";
+import { Button, Footer, Nav, Form } from "../components";
 
 import laptop from "../images/Laptop.svg";
 import backgroundImg from "../images/Angularcolor.png";
@@ -41,6 +41,7 @@ const Home = ({ text }) => {
       ThinkFrim Your Gateway To <br /> Digital Future
     </>
   );
+
   return (
     <div className="">
       <div className="md:px-16 bg-main-bg min-h-screen pb-5" id="home">
@@ -201,44 +202,7 @@ const Home = ({ text }) => {
             Have a Project ? <br className="hidden lg:block" /> We would love to
             help
           </h1>
-
-          {/* Form  */}
-          <form className="py-5 flex flex-wrap justify-center gap-6 bg-black lg:flex-nowrap lg:flex-col lg:p-24 lg:justify-normal">
-            <div className="text-white flex-[1 0 130px]">
-              <button className="border-2 border-[#F9BC60] p-3 mx-2 my-2">
-                SaaS
-              </button>
-              <button className="border-2 border-[#F9BC60] p-3 mx-2 my-2">
-                Mobile Dev
-              </button>
-              <button className="border-2 border-[#F9BC60] p-3 mx-2 my-2">
-                Web Dev
-              </button>
-              <button className="border-2 border-[#F9BC60] p-3 mx-2 my-2">
-                UI UX
-              </button>
-            </div>
-            <input
-              type="text"
-              className="flex-[1 0 130px] bg-inherit text-white border-b-2 border-[#bebebe] py-2"
-              placeholder="your name"
-            />
-            <input
-              type="email"
-              className="flex-[1 0 130px] bg-inherit text-white border-b-2 border-[#bebebe] py-2"
-              placeholder="your email"
-            />
-            <textarea
-              type="text"
-              className="flex-[1 0 130px] bg-inherit text-white border-b-2 border-[#bebebe] py-2"
-              placeholder="your message"
-            />
-            <input type="file" className="input-file flex-[1 0 130px]" />
-            <Button
-              text="Send Request"
-              className="text-white flex-[0 130px] border-2 border-[#F9BC60] p-3"
-            />
-          </form>
+          <Form />
         </div>
       </div>
       <Footer />

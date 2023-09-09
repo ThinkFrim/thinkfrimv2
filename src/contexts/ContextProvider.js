@@ -1,4 +1,3 @@
-import { click } from "@testing-library/user-event/dist/click";
 import { createContext, useContext, useState, useEffect } from "react";
 
 const StateContext = createContext();

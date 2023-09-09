@@ -11,13 +11,13 @@ const Footer = () => {
         </div>
         <div className="flex gap-16">
           <div>
-            <h1 className="text-white">Contact</h1>
+            <h1 className="text-white pb-3">Contact</h1>
             <a href="@mailto:thinkfrim@gmail.com" className="text-white mt-5">
               contact@thinkfrim
             </a>
           </div>
           <div className="text-white flex flex-col">
-            <h1 className="text-white">social</h1>
+            <h1 className="text-white pb-3">social</h1>
             <a href="">Discord</a>
             <a href="">Instagram</a>
             <a href="">Github</a>
