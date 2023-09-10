@@ -198,7 +198,7 @@ const Home = ({ text }) => {
         />
 
         <div className="pt-10 text-center px-2 flex flex-col items-center lg:flex-row md:justify-between md:text-left md:mx-24 lg:pt-24 video-background">
-          <h1 className="pb-5 text-white text-2xl leading-loose">
+          <h1 className="pb-5 text-white text-2xl lg:text-5xl leading-relaxed">
             Have a Project ? <br className="hidden lg:block" /> We would love to
             help
           </h1>

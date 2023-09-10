@@ -1,72 +1,43 @@
-import React, { useRef, useState } from "react";
+import React from "react";
+import { Input } from "../input/Input";
+import { FormProvider, useForm } from "react-hook-form";
 import Button from "../button/Button";
-import emailjs from '@emailjs/browser'
+import { emailValidation, messageValidation, nameValidation } from "../../utils/inputValidation";
+
 const Form = () => {
-  const form = useRef();
+  const methods = useForm();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const onSubmit = methods.handleSubmit((data) => {
+    console.log(data);
+  });
 
-    emailjs
-      .sendForm(
-        "service_te7ls9s",
-        "template_lmr13kk",
-        form.current,
-        "bll7AS4TVykSes83R"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
   return (
-    <form
-      className="py-5 flex flex-wrap justify-center gap-6 bg-black lg:flex-nowrap lg:flex-col lg:p-24 lg:justify-normal"
-      ref={form}
-      onSubmit={sendEmail}
-    >
-      <div className="text-white flex-[1 0 130px]">
-        <button className="border-2 border-[#F9BC60] p-3 mx-2 my-2">
-          SaaS
-        </button>
-        <button className="border-2 border-[#F9BC60] p-3 mx-2 my-2">
-          Mobile Dev
-        </button>
-        <button className="border-2 border-[#F9BC60] p-3 mx-2 my-2">
-          Web Dev
-        </button>
-        <button className="border-2 border-[#F9BC60] p-3 mx-2 my-2">
-          UI UX
-        </button>
-      </div>
-      <input
-        type="text"
-        className="flex-[1 0 130px] bg-inherit text-white border-b-2 border-[#bebebe] py-2 outline-none"
-        placeholder="your name"
-        name="name"
-      />
-      <input
-        type="email"
-        className="flex-[1 0 130px] bg-inherit text-white border-b-2 border-[#bebebe] py-2 outline-none"
-        placeholder="your email"
-        name="email"
-      />
-      <textarea
-        type="text"
-        className="flex-[1 0 130px] bg-inherit text-white border-b-2 border-[#bebebe] py-2 outline-none overflow-auto"
-        placeholder="your message"
-        name="message"
-      />
-      <input type="file" className="input-file flex-[1 0 130px]" />
-      <Button
-        text="Send Request"
-        className="text-white flex-[0 130px] border-2 border-[#F9BC60] p-3"
-      />
-    </form>
+    <FormProvider {...methods}>
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        noValidate
+        autoComplete="off"
+        className=""
+      >
+        {/* BoxForm */}
+        <div className="bg-black p-10 sm:p-16 md:p-20 lg:p-[8rem] mt-5 text-center">
+          <div className="grid gap-5 md:grid-cols-1">
+            <Input {...nameValidation} />
+            <Input {...emailValidation} />
+            <Input {...messageValidation} className="md:cols-span-2" />
+
+            <div className="mt-5">
+              <Button
+                text="Send Request"
+                type="submit"
+                className="p-2 px-3 bg-transparent text-white border-2 border-[#F9BC60]"
+                onClick={onSubmit}
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+    </FormProvider>
   );
 };
 
