@@ -19,10 +19,11 @@ export const Input = ({
     formState: { errors },
   } = useFormContext();
 
-  const inputError = findInputError(errors, label);
+  const inputError = findInputError(errors, name);
   const isInvalid = isFormInvalid(inputError);
 
-  const input_Tailwind = "p-2 font-medium border rounded-md border-slate-300";
+  const input_Tailwind =
+    "p-2 bg-transparent font-medium border-b-2 border-[#F9BC60] outline-none text-white";
   return (
     <div className="flex flex-col w-full gap-2">
       <div className="flex justify-between">
@@ -41,15 +42,16 @@ export const Input = ({
       {multiline ? (
         <textarea
           type={type}
+          placeholder="Place your Message ..."
           id={id}
-          className={`${input_Tailwind}, min-h-[10rem] max-h-[20rem] resize-y'`}
-          {...register(`${name}`, validation, className)}
+          className={`${input_Tailwind}, text-white min-h-[10rem] max-h-[20rem] resize-y'`}
+          {...register(name, validation)}
         />
       ) : (
         <input
           id={id}
           type={type}
-          className={`${input_Tailwind} ${className}` }
+          className={`${input_Tailwind} ${className}`}
           placeholder={placeholder}
           {...register(name, validation)}
         />

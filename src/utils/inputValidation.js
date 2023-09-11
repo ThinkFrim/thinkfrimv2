@@ -26,7 +26,7 @@ export const emailValidation = {
   validation: {
     required: {
       value: true,
-      message: "Email is required",
+      message: "required",
     },
     pattern: {
       value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/,
@@ -36,7 +36,7 @@ export const emailValidation = {
 };
 
 export const messageValidation = {
-  name: 'description',
+  name: 'message',
   label: 'description',
   multiline: true,
   id: 'description',

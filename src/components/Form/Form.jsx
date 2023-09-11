@@ -1,14 +1,49 @@
-import React from "react";
-import { Input } from "../input/Input";
+import React, { useRef, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
+import {
+  emailValidation,
+  messageValidation,
+  nameValidation,
+} from "../../utils/inputValidation";
+import { AiFillCheckCircle } from "react-icons/ai";
+import { Input } from "../input/Input";
 import Button from "../button/Button";
-import { emailValidation, messageValidation, nameValidation } from "../../utils/inputValidation";
+import emailjs from "@emailjs/browser";
 
 const Form = () => {
   const methods = useForm();
+  const [success, setSuccess] = useState(false);
+  const form = useRef();
 
-  const onSubmit = methods.handleSubmit((data) => {
+  const sendEmail = () => {
+    console.log("Sending email...");
+
+    emailjs
+      .sendForm(
+        "service_te7ls9s",
+        "template_lmr13kk",
+        form.current,
+        "bll7AS4TVykSes83R"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  const onSubmit = methods.handleSubmit(async (data) => {
     console.log(data);
+
+    methods.reset();
+
+    setSuccess(true);
+
+    // calling sendEmail
+    await sendEmail(data);
   });
 
   return (
@@ -18,15 +53,25 @@ const Form = () => {
         noValidate
         autoComplete="off"
         className=""
+        ref={form}
       >
         {/* BoxForm */}
         <div className="bg-black p-10 sm:p-16 md:p-20 lg:p-[8rem] mt-5 text-center">
           <div className="grid gap-5 md:grid-cols-1">
-            <Input {...nameValidation} />
-            <Input {...emailValidation} />
-            <Input {...messageValidation} className="md:cols-span-2" />
+            <Input {...nameValidation} name="name" />
+            <Input {...emailValidation} name="email" />
+            <Input
+              {...messageValidation}
+              name="message"
+              className="md:cols-span-2 "
+            />
 
             <div className="mt-5">
+              {success && (
+                <p className="flex items-center gap-1 mb-5 font-semibold text-green-500">
+                  <AiFillCheckCircle /> Form has been submitted successfully
+                </p>
+              )}
               <Button
                 text="Send Request"
                 type="submit"
