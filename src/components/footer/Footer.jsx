@@ -3,7 +3,7 @@ import LogoImage from "../../images/Logo/logo.png";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-main-bg py-10 px-10">
+    <footer className="bg-main-bg pt-10 px-10">
       <div className="flex flex-col-reverse md:flex-row md:justify-between">
         <div className="flex items-center gap-3">
           <img src={LogoImage} alt="" className="w-[10vw] lg:w-[4vw]" />

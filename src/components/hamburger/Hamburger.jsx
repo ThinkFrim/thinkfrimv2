@@ -1,6 +1,6 @@
 import React from "react";
 import "./hamburger.css";
-const Hamburger = () => {
+const Hamburger = ({menuOpen, toggleMenu}) => {
   return (
     <label className="hamburger">
       <input type="checkbox" />

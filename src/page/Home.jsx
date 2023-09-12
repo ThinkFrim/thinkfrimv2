@@ -120,7 +120,10 @@ const Home = ({ text }) => {
 
           <div className="z-20 pb-10 lg:pb-0">
             {serviceData.map((item, index) => (
-              <div className="mt-6 p-5 mx-2 lg:w-[40vw] rounded-xl bg-[#0F0E17] flex justify-between items-center" key={index}>
+              <div
+                className="mt-6 p-5 mx-2 lg:w-[40vw] rounded-xl bg-[#0F0E17] flex justify-between items-center"
+                key={index}
+              >
                 <div>
                   <h1 className="text-white text-lg">{item.title}</h1>
                   <h2 className="text-[#BEBEBE]">{item.description}</h2>
@@ -197,7 +200,7 @@ const Home = ({ text }) => {
           className="video"
         />
 
-        <div className="pt-10 text-center px-2 flex flex-col items-center lg:flex-row md:justify-between md:text-left md:mx-24 lg:pt-24 video-background">
+        <div className="pt-10 text-center px-2 flex flex-col items-center lg:flex-row md:justify-between md:text-left md:mx-24 lg:pt-10 video-background">
           <h1 className="pb-5 text-white text-2xl lg:text-5xl leading-relaxed">
             Have a Project ? <br className="hidden lg:block" /> We would love to
             help

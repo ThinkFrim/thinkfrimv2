@@ -11,17 +11,17 @@ const NavItem = ({ title, active, onItemClick }) => {
       }`}
     >
       <HashLink smooth to={`#${title}`} onClick={() => onItemClick(title)}>
-        <span className="relative inline-block">
+        <span className="relative inline-block py-5 md:py-0">
           {title}
           <span
-            className={`absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-5 rounded-full h-1 bg-underline-bg transition-transform duration-300 ${
+            className={`absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-6 lg:w-5 rounded-full h-1 bg-underline-bg transition-transform duration-300 ${
               active ? "scale-x-100" : "scale-x-0"
             }`}
           ></span>
         </span>
       </HashLink>
       {active && (
-        <div className="absolute inset-0 shadow-md blur-md bg-white opacity-10 transition-opacity duration-300"></div>
+        <div className="absolute inset-5 shadow-md blur-md bg-white opacity-10 transition-all duration-300"></div>
       )}
     </li>
   );
@@ -35,7 +35,7 @@ const Nav = () => {
       {/* Mobile */}
 
       <div className="lg:hidden block mx-auto py-2 px-3 rounded-full container bg-[#3f42525c]">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center z-10">
           <div>
             <img
               src={LogoImage}
@@ -43,17 +43,13 @@ const Nav = () => {
               className="w-[11.5vw] md:w-[7vw] sm:w-[8vw]"
             />
           </div>
-          <button onClick={toggleMenu}>
-            <Hamburger />
-          </button>
-        </div>
-        <div
-          className={`fixed top-0 left-0 h-full w-full z-40 bg-[#3F4252] transform ${
-            menuOpen ? "translate-x-0" : "translate-x-full"
-          } transition-transform ease-in-out duration-300`}
-        >
-          <div className="text-white text-center mt-8">
-            <ul>
+          <button className="text-white" onClick={toggleMenu}>{menuOpen ? "Close" : "Open"}</button>
+          <div
+            className={`${
+              menuOpen ? "flex-col justify-center items-center" : "hidden"
+            } fixed top-0 left-0 right-0 bottom-0  bg-[#000] z-40`}
+          >
+            <div className="flex flex-col justify-center items-center h-full">
               <NavItem
                 title="About"
                 active={currentColor === "About"}
@@ -74,7 +70,7 @@ const Nav = () => {
                 active={currentColor === "Contact"}
                 onItemClick={() => handleItemClick("Contact")}
               />
-            </ul>
+            </div>
           </div>
         </div>
       </div>

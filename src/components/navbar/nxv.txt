@@ -1,0 +1,39 @@
+<div className="bg-gray-800">
+      <div className="container mx-auto py-4">
+        <div className="flex items-center justify-between">
+          <HashLink to="/" className="flex items-center gap-2 text-white">
+            <img src={LogoImage} alt="Logo" className="" />
+            <h1 className="text-4xl hidden lg:block">ThinkFrim</h1>
+          </HashLink>
+          <button onClick={toggleMenu} className="lg:hidden text-white">
+            <Hamburger />
+          </button>
+          <div
+            className={`lg:flex ${
+              menuOpen ? "flex-col" : "hidden"
+            } lg:block gap-5 md:pl-28`}
+          >
+            <NavItem
+              title="About"
+              active={currentColor === "About"}
+              onItemClick={() => handleItemClick("About")}
+            />
+            <NavItem
+              title="Service"
+              active={currentColor === "Service"}
+              onItemClick={() => handleItemClick("Service")}
+            />
+            <NavItem
+              title="Projects"
+              active={currentColor === "Projects"}
+              onItemClick={() => handleItemClick("Projects")}
+            />
+            <NavItem
+              title="Contact"
+              active={currentColor === "Contact"}
+              onItemClick={() => handleItemClick("Contact")}
+            />
+          </div>
+        </div>
+      </div>
+    </div>

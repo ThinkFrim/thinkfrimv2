@@ -56,14 +56,14 @@ const Form = () => {
         ref={form}
       >
         {/* BoxForm */}
-        <div className="bg-black p-10 sm:p-16 md:p-20 lg:p-[8rem] mt-5 text-center">
+        <div className="bg-black p-5 sm:p-16 md:p-20 lg:p-[5rem] mt-5 text-center">
           <div className="grid gap-5 md:grid-cols-1">
             <Input {...nameValidation} name="name" />
             <Input {...emailValidation} name="email" />
             <Input
               {...messageValidation}
               name="message"
-              className="md:cols-span-2 "
+              className="md:cols-span-2"
             />
 
             <div className="mt-5">
@@ -75,7 +75,7 @@ const Form = () => {
               <Button
                 text="Send Request"
                 type="submit"
-                className="p-2 px-3 bg-transparent text-white border-2 border-[#F9BC60]"
+                className="p-2 mt-4 md:mt-0 px-3 bg-transparent text-white border-2 border-[#F9BC60]"
                 onClick={onSubmit}
               />
             </div>

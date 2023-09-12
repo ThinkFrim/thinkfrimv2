@@ -16,8 +16,8 @@ export const ContextProvider = ({ children }) => {
 
   // Navbar Link Colors
   const handleItemClick = (item) => {
-      setCurrentColor(item);
-      setMenuOpen(false);
+    setCurrentColor(item);
+    setMenuOpen(false)
   };
 
   // ImageData
