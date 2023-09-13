@@ -179,7 +179,7 @@ const Home = ({ text }) => {
       {/* Our Projects */}
       <div className="h-screen bg-secondary-bg p-24 pt-24" id="Projects">
         <div>
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left mb-24">
             <h1 className="text-5xl text-white pb-5">Projects</h1>
             <h2 className="text-[#BEBEBE] text-xl">
               showcase of our latest projects

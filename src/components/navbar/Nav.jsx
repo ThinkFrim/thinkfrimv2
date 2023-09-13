@@ -34,8 +34,8 @@ const Nav = () => {
     <nav className="lg:fixed container mx-auto p-5 z-40">
       {/* Mobile */}
 
-      <div className="lg:hidden block mx-auto py-2 px-3 rounded-full container bg-[#3f42525c]">
-        <div className="flex justify-between items-center z-10">
+      <div className="lg:hidden block">
+        <div className="flex justify-between items-center  mx-auto py-2 px-3 rounded-full container bg-[#3f42525c] z-10">
           <div>
             <img
               src={LogoImage}
@@ -43,34 +43,36 @@ const Nav = () => {
               className="w-[11.5vw] md:w-[7vw] sm:w-[8vw]"
             />
           </div>
-          <button className="text-white" onClick={toggleMenu}>{menuOpen ? "Close" : "Open"}</button>
-          <div
-            className={`${
-              menuOpen ? "flex-col justify-center items-center" : "hidden"
-            } fixed top-0 left-0 right-0 bottom-0  bg-[#000] z-40`}
-          >
-            <div className="flex flex-col justify-center items-center h-full">
-              <NavItem
-                title="About"
-                active={currentColor === "About"}
-                onItemClick={() => handleItemClick("About")}
-              />
-              <NavItem
-                title="Service"
-                active={currentColor === "Service"}
-                onItemClick={() => handleItemClick("Service")}
-              />
-              <NavItem
-                title="Projects"
-                active={currentColor === "Projects"}
-                onItemClick={() => handleItemClick("Projects")}
-              />
-              <NavItem
-                title="Contact"
-                active={currentColor === "Contact"}
-                onItemClick={() => handleItemClick("Contact")}
-              />
-            </div>
+          <button className="text-white" onClick={toggleMenu}>
+            {menuOpen ? "Close" : "Open"}
+          </button>
+        </div>
+        <div
+          className={`${
+            menuOpen ? "flex-col justify-center items-center" : "hidden"
+          } fixed top-0 left-0 right-0 bottom-0  bg-[#000] z-20`}
+        >
+          <div className="flex flex-col justify-center items-center h-full">
+            <NavItem
+              title="About"
+              active={currentColor === "About"}
+              onItemClick={() => handleItemClick("About")}
+            />
+            <NavItem
+              title="Service"
+              active={currentColor === "Service"}
+              onItemClick={() => handleItemClick("Service")}
+            />
+            <NavItem
+              title="Projects"
+              active={currentColor === "Projects"}
+              onItemClick={() => handleItemClick("Projects")}
+            />
+            <NavItem
+              title="Contact"
+              active={currentColor === "Contact"}
+              onItemClick={() => handleItemClick("Contact")}
+            />
           </div>
         </div>
       </div>
