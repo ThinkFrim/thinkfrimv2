@@ -10,44 +10,33 @@ const CarouselMotion = () => {
   return (
     <div>
       <Swiper
-        spaceBetween={220}
-        slidesPerView={1}
+        spaceBetween={20} // Adjust this value for spacing between slides on smaller screens
+        slidesPerView={1} // Set the number of slides per view for small screens
         grabCursor={true}
         breakpoints={{
-          490: {
-            slidesPerView: 1,
-          },
-          // when window width is >= 640px
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          // when window width is >= 768px
+          // Responsive breakpoints for larger screens
           768: {
-            slidesPerView: 3,
-            spaceBetween: 30,
+            slidesPerView: 1, // Set the number of slides per view for screens >= 768px wide
+            spaceBetween: 40, // Adjust this value for spacing between slides on larger screens
           },
-          // when window width is >= 1024px
           1024: {
-            slidesPerView: 4,
-            spaceBetween: 40,
+            slidesPerView: 3, // Set the number of slides per view for screens >= 1024px wide
+            spaceBetween: 60, // Adjust this value for spacing between slides on even larger screens
           },
         }}>
-        <div>
-          {imageData.map((item, index) => (
-            <SwiperSlide className='item' key={index}>
-              <img src={item.img} alt='' className='object-cover' />
-              <div className='image-overlay'>
-                <h1 className='text-white lg:text-5xl'>{item.title}</h1>
-                <p className='lg:text-2xl text-white py-5'>{item.info}</p>
-                <Button
-                  text='View Website'
-                  className='bg-underline-bg p-3 px-10 rounded-md'
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </div>
+        {imageData.map((item, index) => (
+          <SwiperSlide className='item' key={index}>
+            <img src={item.img} alt='' className='h-auto w-full' />
+            <div className='image-overlay'>
+              <h1 className='text-white lg:text-5xl text-base'>{item.title}</h1>
+              <p className='lg:text-2xl text-white py-2 lg:py-5'>{item.info}</p>
+              <Button
+                text='View Website'
+                className='bg-underline-bg p-2 px-10 rounded-md text-xm'
+              />
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
