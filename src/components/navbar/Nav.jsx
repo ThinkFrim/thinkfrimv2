@@ -33,7 +33,7 @@ const Nav = () => {
       {/* Mobile */}
 
       <div className='lg:hidden block'>
-        <div className="flex justify-between items-center  mx-auto py-2 px-3 rounded-full container bg-[#46495B]">
+        <div className="z-60 flex justify-between items-center  mx-auto py-2 px-3 rounded-full container bg-[#46495B]">
           <img
             src={LogoImage}
             alt=''

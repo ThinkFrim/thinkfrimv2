@@ -141,7 +141,7 @@ const Home = ({ text }) => {
       </div>
 
       {/* About */}
-      <div className='relative bg-main-bg h-screen' id='About'>
+      <div className='relative bg-main-bg min-h-screen' id='About'>
         <div className='pt-16 flex flex-col lg:flex-row items-center justify-between lg:mx-24'>
           <div className='absolute bottom-0 inset-0 -z-1'>
             <img
