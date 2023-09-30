@@ -1,7 +1,6 @@
 import LogoImage from "../../images/Logo/logo.png";
 import { useStateContext } from "../../contexts/ContextProvider";
 import { HashLink } from "react-router-hash-link";
-import Hamburger from "../hamburger/Hamburger";
 
 const NavItem = ({ title, active, onItemClick }) => {
   return (
