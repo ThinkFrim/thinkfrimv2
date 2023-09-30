@@ -17,7 +17,7 @@ import "./Home.css";
 import { HashLink } from "react-router-hash-link";
 import { useMediaQuery } from "react-responsive";
 
-const Home = ({ text }) => {
+const Home = () => {
   const isSmallScreen = useMediaQuery({ minWidth: 1024 });
 
   const mainText = isSmallScreen ? (
