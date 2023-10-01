@@ -49,33 +49,31 @@ const Form = () => {
   return (
     <FormProvider {...methods}>
       <form
-        onSubmit={(e) => e.preventDefault()}
+        onClick={sendEmail}
         noValidate
-        autoComplete="off"
-        className=""
-        ref={form}
-      >
+        autoComplete='off'
+        ref={form}>
         {/* BoxForm */}
-        <div className="bg-black p-5 sm:p-16 md:p-20 lg:p-[5rem] mt-5 text-center">
-          <div className="grid gap-5 md:grid-cols-1">
-            <Input {...nameValidation} name="name" />
-            <Input {...emailValidation} name="email" />
+        <div className='bg-black w-auto p-10 md:w-[30rem]  mt-5 text-center'>
+          <div className='grid gap-5 md:grid-cols-1'>
+            <Input {...nameValidation} name='name' />
+            <Input {...emailValidation} name='email' />
             <Input
               {...messageValidation}
-              name="message"
-              className="md:cols-span-2"
+              name='message'
+              className='md:cols-span-2'
             />
 
-            <div className="mt-5">
+            <div className='mt-5'>
               {success && (
-                <p className="flex items-center gap-1 mb-5 font-semibold text-green-500">
+                <p className='flex items-center gap-1 mb-5 font-semibold text-green-500'>
                   <AiFillCheckCircle /> Form has been submitted successfully
                 </p>
               )}
               <Button
-                text="Send Request"
-                type="submit"
-                className="p-2 mt-4 md:mt-0 px-3 bg-transparent text-white border-2 border-[#F9BC60]"
+                text='Send Request'
+                type='submit'
+                className='p-2 mt-4 md:mt-0 px-3 bg-transparent text-white border-2 border-[#F9BC60]'
                 onClick={onSubmit}
               />
             </div>

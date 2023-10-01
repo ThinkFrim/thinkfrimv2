@@ -37,9 +37,10 @@ export const emailValidation = {
 
 export const messageValidation = {
   name: 'message',
-  label: 'description',
+  label: 'message',
+  type: 'message',
   multiline: true,
-  id: 'description',
+  id: 'message',
   placeholder: 'write description ...',
   validation: {
     required: {

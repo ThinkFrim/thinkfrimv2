@@ -7,17 +7,16 @@ import { findInputError, isFormInvalid } from "../../utils";
 export const Input = ({
   name,
   validation,
+  value,
   label,
   type,
   id,
   placeholder,
+  onChange,
   multiline,
   className,
 }) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
+  const {register, formState: { errors },} = useFormContext();
 
   const inputError = findInputError(errors, name);
   const isInvalid = isFormInvalid(inputError);
@@ -25,12 +24,12 @@ export const Input = ({
   const input_Tailwind =
     "p-2 bg-transparent font-medium border-b-2 border-[#F9BC60] outline-none text-white";
   return (
-    <div className="flex flex-col w-full gap-2">
-      <div className="flex justify-between">
-        <label htmlFor={id} className="font-semibold capitalize">
+    <div className='flex flex-col w-full gap-2'>
+      <div className='flex justify-between'>
+        <label htmlFor={id} className='font-semibold capitalize'>
           {label}
         </label>
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence mode='wait' initial={false}>
           {isInvalid && (
             <InputError
               message={inputError.error.message}
@@ -42,8 +41,11 @@ export const Input = ({
       {multiline ? (
         <textarea
           type={type}
-          placeholder="Place your Message ..."
+          name={name}
+          value={value}
+          placeholder='Place your Message ...'
           id={id}
+          onChange={onChange}
           className={`${input_Tailwind}, text-white min-h-[10rem] max-h-[20rem] resize-y'`}
           {...register(name, validation)}
         />
@@ -51,9 +53,12 @@ export const Input = ({
         <input
           id={id}
           type={type}
+          name={name}
+          value={value}
           className={`${input_Tailwind} ${className}`}
           placeholder={placeholder}
           {...register(name, validation)}
+          onChange={onChange}
         />
       )}
     </div>
@@ -63,9 +68,8 @@ export const Input = ({
 const InputError = ({ message }) => {
   return (
     <motion.p
-      className="flex items-center gap-1 px-2 text-red-600 rounded-md"
-      {...framer_error}
-    >
+      className='flex items-center gap-1 px-2 text-red-600 rounded-md'
+      {...framer_error}>
       <BiErrorCircle />
       {message}
     </motion.p>

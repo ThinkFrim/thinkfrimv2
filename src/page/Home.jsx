@@ -153,7 +153,7 @@ const Home = () => {
           <div className='hidden lg:block'>
             <img src={aboutImg} alt='' />
           </div>
-          <div className='text-center lg:text-left'>
+          <div className='text-center lg:text-left z-10'>
             <h1 className='pb-3 text-[#F9BC60] text-xl'>About us</h1>
             <h1 className='text-white text-3xl leading-loose lg:text-5xl'>
               We Bring <span className='text-[#F9bc60]'>Creative</span> <br />{" "}
@@ -189,7 +189,7 @@ const Home = () => {
       </div>
 
       {/* Contact */}
-      <div className='video-background min-h-screen' id='Contact'>
+      <div className='video-background min-h-screen pb-24' id='Contact'>
         <video
           src={video}
           type='video/mp4'
@@ -199,8 +199,8 @@ const Home = () => {
           className='video'
         />
 
-        <div className='pt-10 text-center px-2 flex flex-col items-center lg:flex-row md:justify-between md:text-left md:mx-24 lg:pt-10 video-background'>
-          <h1 className='pb-5 text-white text-2xl xl:text-5xl leading-relaxed'>
+        <div className='pt-10 text-center px-2 flex flex-col items-center lg:flex-row md:justify-between md:text-left md:mx-24 video-background'>
+          <h1 className='pb-5 text-white text-2xl xl:text-4xl'>
             Have a Project ? <br className='hidden lg:block' /> We would love to
             help
           </h1>
