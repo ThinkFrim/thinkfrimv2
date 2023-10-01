@@ -1,12 +1,13 @@
 import LogoImage from "../../images/Logo/logo.png";
 import { useStateContext } from "../../contexts/ContextProvider";
 import { HashLink } from "react-router-hash-link";
+import { Sling as Hamburger, Sling } from "hamburger-react";
 
 const NavItem = ({ title, active, onItemClick }) => {
   return (
     <li
       className={`cursor-pointer relative transition-colors list-none ${
-        active ? "text-white" : "lg:text-[#B5B5B5] text-black"
+        active ? "text-white" : "lg:text-[#46495B] text-black"
       }`}>
       <HashLink smooth to={`#${title}`} onClick={() => onItemClick(title)}>
         <span className='relative inline-block py-5 lg:py-0'>
@@ -28,26 +29,39 @@ const Nav = () => {
     useStateContext();
 
   return (
-    <nav className='lg:fixed container mx-auto p-5 z-40'>
+    <nav
+      className={`lg:fixed container mx-auto p-5  relative ${
+        menuOpen ? "fixed" : ""
+      }`}>
       {/* Mobile */}
 
       <div className='lg:hidden block'>
-        <div className="z-60 flex justify-between items-center  mx-auto py-2 px-3 rounded-full container bg-[#46495B]">
+        <div
+          className={`flex justify-between items-center mx-auto py-2 px-3 rounded-full container bg-[#46495b58] ${
+            menuOpen ? "fixed left-0 right-0 w-[25rem] z-40 bg-[#46495b00]" : ""
+          }`}>
           <img
             src={LogoImage}
             alt=''
             className='w-[11.5vw] md:w-[7vw] sm:w-[8vw]'
           />
           <div className=''>
-            <button className='text-white' onClick={toggleMenu}>
-              {menuOpen ? "Close" : "Open"}
-            </button>
+            <Sling
+              direction='right'
+              color={menuOpen ? "#000" : "#fff"}
+              toggled={menuOpen}
+              toggle={toggleMenu}
+              size={24}
+              onToggle={toggleMenu}
+            />
           </div>
         </div>
         <div
           className={`${
-            menuOpen ? "flex-col justify-center items-center bg-underline-bg" : "hidden"
-          } fixed top-0 left-0 right-0 bottom-0  z-30`}>
+            menuOpen
+              ? " transition-all duration-200 ease-in-out transform translate-x-0 flex-col justify-center items-center bg-underline-bg"
+              : "hidden"
+          } fixed top-0 left-0 right-0 bottom-0 z-30`}>
           <div className='flex flex-col justify-center items-center h-full'>
             <NavItem
               title='About'

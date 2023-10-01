@@ -12,12 +12,13 @@ export const ContextProvider = ({ children }) => {
   // MenuBar
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    document.body.classList.toggle("disable-scrolling", menuOpen);
   };
 
   // Navbar Link Colors
   const handleItemClick = (item) => {
     setCurrentColor(item);
-    setMenuOpen(false)
+    setMenuOpen(false);
   };
 
   // ImageData
@@ -64,8 +65,7 @@ export const ContextProvider = ({ children }) => {
         menuOpen,
         setMenuOpen,
         toggleMenu,
-      }}
-    >
+      }}>
       {children}
     </StateContext.Provider>
   );
