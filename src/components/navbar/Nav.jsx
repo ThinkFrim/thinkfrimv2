@@ -29,23 +29,22 @@ const Nav = () => {
     useStateContext();
 
   return (
-    <nav
-      className={`lg:fixed container mx-auto p-5  relative ${
-        menuOpen ? "fixed" : ""
-      }`}>
+    <nav className={`lg:fixed container mx-auto p-5  relative z-50 }`}>
       {/* Mobile */}
 
       <div className='lg:hidden block'>
         <div
-          className={`flex justify-between items-center mx-auto py-2 px-3 rounded-full container bg-[#46495b58] ${
-            menuOpen ? "fixed left-0 right-0 w-[25rem] z-40 bg-[#46495b00]" : ""
+          className={`flex justify-between items-center  py-2 px-3 rounded-full  bg-[#46495b58] ${
+            menuOpen
+              ? "z-40 fixed left-0 right-0  flex justify-between items-center  py-2 px-3 bg-transparent"
+              : ""
           }`}>
           <img
             src={LogoImage}
             alt=''
             className='w-[11.5vw] md:w-[7vw] sm:w-[8vw]'
           />
-          <div className=''>
+          <div className='w-auto'>
             <Sling
               direction='right'
               color={menuOpen ? "#000" : "#fff"}
@@ -59,9 +58,9 @@ const Nav = () => {
         <div
           className={`${
             menuOpen
-              ? " transition-all duration-200 ease-in-out transform translate-x-0 flex-col justify-center items-center bg-underline-bg"
+              ? " flex-col justify-center items-center bg-underline-bg"
               : "hidden"
-          } fixed top-0 left-0 right-0 bottom-0 z-30`}>
+          } fixed top-0 left-0 right-0 bottom-0 z-20`}>
           <div className='flex flex-col justify-center items-center h-full'>
             <NavItem
               title='About'
@@ -89,7 +88,7 @@ const Nav = () => {
 
       {/* Desktop */}
 
-      <div className='hidden lg:flex items-center'>
+      <div className='hidden lg:flex items-center z-10'>
         <HashLink to='/' className='flex items-center gap-2'>
           <img src={LogoImage} alt='' className='' />
           <h1 className='text-white text-4xl hidden lg:block'>ThinkFrim</h1>

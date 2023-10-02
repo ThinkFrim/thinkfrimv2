@@ -55,7 +55,7 @@ const Home = () => {
               <div className='absolute left-1/2 transform -translate-x-1/2 w-20 inset-0 bg-[#ADC3FF] blur-md opacity-20'></div>
             </div>
             <div className='text-white text-center lg:text-left'>
-              <h1 className='lg:text-4xl text-2xl py-5'>{mainText}</h1>
+              <h1 className='lg:text-3xl text-2xl py-5'>{mainText}</h1>
               <h3 className='lg:text-2xl'>{subText}</h3>
             </div>
             <div>
