@@ -1,3 +1,7 @@
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import LogoImage from "../../images/Logo/logo.png";
 import { useStateContext } from "../../contexts/ContextProvider";
 import { HashLink } from "react-router-hash-link";
@@ -24,9 +28,16 @@ const NavItem = ({ title, active, onItemClick }) => {
     </li>
   );
 };
+
 const Nav = () => {
   const { currentColor, handleItemClick, toggleMenu, menuOpen } =
     useStateContext();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
 
   return (
     <nav className={`lg:fixed container mx-auto p-5  relative z-50 }`}>
@@ -38,7 +49,7 @@ const Nav = () => {
             menuOpen
               ? "z-40 fixed left-0 right-0  flex justify-between items-center  py-2 px-3 bg-transparent"
               : ""
-          }`}>
+          }`} data-aos="fade-down">
           <img
             src={LogoImage}
             alt=''

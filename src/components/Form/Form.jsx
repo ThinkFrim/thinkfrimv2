@@ -35,15 +35,12 @@ const Form = () => {
       );
   };
 
-  const onSubmit = methods.handleSubmit(async (data) => {
+  const onSubmit = methods.handleSubmit((data) => {
     console.log(data);
 
     methods.reset();
 
     setSuccess(true);
-
-    // calling sendEmail
-    await sendEmail(data);
   });
 
   return (

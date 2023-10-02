@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
           <Home />
-        <ScreenLoading />
+        {/* <ScreenLoading /> */}
       </BrowserRouter>
     </div>
   );

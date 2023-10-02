@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import { Button, Footer, Nav, Form } from "../components";
 
@@ -42,12 +44,18 @@ const Home = () => {
     </>
   );
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
   return (
     <div className=''>
-      <div className='md:px-16 bg-main-bg min-h-screen pb-5' id='home'>
+      <div className='md:px-16 bg-main-bg min-h-screen pb-5 overflow-hidden' id='home' data-aos="fade-right">
         <Nav />
         <div className='container mx-auto pt-16 h-full xl:pt-24'>
-          <div className='lg:flex-row lg:justify-normal flex flex-col items-center gap-5'>
+          <div className='lg:flex-row lg:justify-normal flex flex-col items-center gap-5' data-aos="fade-up">
             <div className='relative'>
               <h1 className='md:hidden relative text-[#ADC3FF] z-10'>
                 ThinkFrim
@@ -59,7 +67,12 @@ const Home = () => {
               <h3 className='lg:text-2xl'>{subText}</h3>
             </div>
             <div>
-              <img src={laptop} alt='' className='hidden lg:block w-[35vw]' />
+              <img
+                src={laptop}
+                alt=''
+                className='hidden lg:block w-[35vw]'
+                loading='lazy'
+              />
             </div>
           </div>
           <div className='flex flex-col-reverse lg:flex-row items-center lg:justify-between'>
@@ -78,7 +91,7 @@ const Home = () => {
                 />
               </HashLink>
             </div>
-            <div className='lg:pb-0 flex gap-5 items-center justify-center pb-10'>
+            <div className='lg:pb-0 flex gap-5 items-center justify-center pb-10 overflow-hidden'>
               <h1 className='text-white hidden lg:block'>Follow us</h1>
               <div className='lg:gap-5 text-xl flex gap-16 text-white translate-x-[20%]'>
                 {socialIcons.map((item, index) => (
@@ -94,7 +107,7 @@ const Home = () => {
 
       {/* service */}
 
-      <div className='relative bg-secondary-bg min-h-screen' id='Service'>
+      <div className='relative bg-secondary-bg min-h-screen overflow-hidden' id='Service'>
         <div className='absolute bottom-0 inset-0 -z-1'>
           <img
             src={backgroundImg}
@@ -104,7 +117,7 @@ const Home = () => {
         </div>
 
         <div className='lg:p-16 xl:pt-24 lg:flex-row flex flex-col justify-between'>
-          <div className='pt-10 text-center lg:text-left z-10'>
+          <div className='pt-10 text-center lg:text-left z-10' data-aos="fade-left">
             <h1 className='pb-5 text-3xl text-white xl:text-5xl '>
               Services We Provide
             </h1>
@@ -115,14 +128,19 @@ const Home = () => {
               Our expertise extends across a spectrum of{" "}
               <br className='hidden md:block' /> solutions, including
             </p>
-            <img src={ServiceImg} alt='' className='hidden lg:block' />
+            <img
+              src={ServiceImg}
+              alt=''
+              className='hidden lg:block'
+              loading='lazy'
+            />
           </div>
 
           <div className='z-20 pb-10 lg:pb-0'>
             {serviceData.map((item, index) => (
               <div
                 className='mt-6 p-5 mx-2 lg:w-[40vw] rounded-xl bg-[#0F0E17] flex justify-between items-center'
-                key={index}>
+                key={index} data-aos="fade-down">
                 <div>
                   <h1 className='text-white text-lg'>{item.title}</h1>
                   <h2 className='text-[#BEBEBE]'>{item.description}</h2>
@@ -151,7 +169,7 @@ const Home = () => {
             />
           </div>
           <div className='hidden lg:block'>
-            <img src={aboutImg} alt='' />
+            <img src={aboutImg} alt='' loading='lazy' />
           </div>
           <div className='text-center lg:text-left z-10'>
             <h1 className='pb-3 text-[#F9BC60] text-xl'>About us</h1>
