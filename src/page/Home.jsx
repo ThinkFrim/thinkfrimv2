@@ -52,10 +52,23 @@ const Home = () => {
 
   return (
     <div className=''>
-      <div className='md:px-16 bg-main-bg min-h-screen pb-5 overflow-hidden' id='home' data-aos="fade-right">
+      <div
+        className='md:px-16 bg-main-bg min-h-screen pb-5 overflow-hidden'
+        id='home'>
         <Nav />
-        <div className='container mx-auto pt-16 h-full xl:pt-24'>
-          <div className='lg:flex-row lg:justify-normal flex flex-col items-center gap-5' data-aos="fade-up">
+        <div className='absolute bottom-0 inset-0 -z-1'>
+          <img
+            src={backgroundImg}
+            alt=''
+            className='hidden lg:block object-cover w-full h-full'
+          />
+        </div>  
+        <div
+          className='container mx-auto pt-16 h-full xl:pt-24'
+          data-aos='fade-right'>
+          <div
+            className='lg:flex-row lg:justify-normal flex flex-col items-center gap-5'
+            data-aos='fade-up'>
             <div className='relative'>
               <h1 className='md:hidden relative text-[#ADC3FF] z-10'>
                 ThinkFrim
@@ -91,7 +104,7 @@ const Home = () => {
                 />
               </HashLink>
             </div>
-            <div className='lg:pb-0 flex gap-5 items-center justify-center pb-10 overflow-hidden'>
+            <div className='lg:pb-0 flex gap-5 items-center justify-center pb-10'>
               <h1 className='text-white hidden lg:block'>Follow us</h1>
               <div className='lg:gap-5 text-xl flex gap-16 text-white translate-x-[20%]'>
                 {socialIcons.map((item, index) => (
@@ -107,7 +120,9 @@ const Home = () => {
 
       {/* service */}
 
-      <div className='relative bg-secondary-bg min-h-screen overflow-hidden' id='Service'>
+      <div
+        className='relative bg-secondary-bg min-h-screen overflow-hidden'
+        id='Service'>
         <div className='absolute bottom-0 inset-0 -z-1'>
           <img
             src={backgroundImg}
@@ -117,7 +132,9 @@ const Home = () => {
         </div>
 
         <div className='lg:p-16 xl:pt-24 lg:flex-row flex flex-col justify-between'>
-          <div className='pt-10 text-center lg:text-left z-10' data-aos="fade-left">
+          <div
+            className='pt-10 text-center lg:text-left z-10'
+            data-aos='fade-left'>
             <h1 className='pb-5 text-3xl text-white xl:text-5xl '>
               Services We Provide
             </h1>
@@ -140,7 +157,8 @@ const Home = () => {
             {serviceData.map((item, index) => (
               <div
                 className='mt-6 p-5 mx-2 lg:w-[40vw] rounded-xl bg-[#0F0E17] flex justify-between items-center'
-                key={index} data-aos="fade-down">
+                key={index}
+                data-aos='fade-down'>
                 <div>
                   <h1 className='text-white text-lg'>{item.title}</h1>
                   <h2 className='text-[#BEBEBE]'>{item.description}</h2>
@@ -169,7 +187,7 @@ const Home = () => {
             />
           </div>
           <div className='hidden lg:block'>
-            <img src={aboutImg} alt='' loading='lazy' />
+            <img src={aboutImg} alt='' loading='lazy' data-aos='fade-down' />
           </div>
           <div className='text-center lg:text-left z-10'>
             <h1 className='pb-3 text-[#F9BC60] text-xl'>About us</h1>
@@ -177,17 +195,18 @@ const Home = () => {
               We Bring <span className='text-[#F9bc60]'>Creative</span> <br />{" "}
               Ideas To Life
             </h1>
-            <div className='my-5 w-[25%] mx-auto lg: lg:mx-0 border-2 border-white'></div>
+            <div
+              className='my-5 w-[25%] mx-auto lg: lg:mx-0 border-2 border-white overflow-hidden'
+              data-aos='fade-left'></div>
             <h1 className='pb-3 text-[#F9BC60] text-xl'>We Love Creating</h1>
-            <p className='text-white px-5 md:px-0 lg:text-xl'>
-              Lorem ipsumNeque porro quisquam est qui do lorem ipsum quia dolor
-              <br />
-              sit amet, Neque porro elit NeDque porro Lorem ipsum Neque porro
-              <br />
-              <br />
-              Neque porro Neque porro quisquam est qui do lorem ipsum quia dolor
-              <br />
-              sit amet, Lorem ipsum Neque quis ipsum
+            <p
+              className='text-white px-5 md:px-0 lg:text-xl leading-loose'
+              data-aos='fade-down'>
+              At Thinkfrim, we specialize in web development and design.
+              <br  className="hidden md:block"/>
+              Our passion drives us to create exceptional online experiences.{" "}
+              <br  className="hidden md:block"/>
+              We're here to bring your digital ideas to life
             </p>
           </div>
         </div>

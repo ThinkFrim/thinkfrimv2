@@ -11,7 +11,7 @@ const NavItem = ({ title, active, onItemClick }) => {
   return (
     <li
       className={`cursor-pointer relative transition-colors list-none ${
-        active ? "text-white" : "lg:text-[#46495B] text-black"
+        active ? "text-white" : "lg:text-[#B5B5B5] text-black"
       }`}>
       <HashLink smooth to={`#${title}`} onClick={() => onItemClick(title)}>
         <span className='relative inline-block py-5 lg:py-0'>
@@ -47,9 +47,9 @@ const Nav = () => {
         <div
           className={`flex justify-between items-center  py-2 px-3 rounded-full  bg-[#46495b58] ${
             menuOpen
-              ? "z-40 fixed left-0 right-0  flex justify-between items-center  py-2 px-3 bg-transparent"
+              ? "z-40 fixed left-0 right-0  flex justify-between items-center  bg-transparent"
               : ""
-          }`} data-aos="fade-down">
+          }`}>
           <img
             src={LogoImage}
             alt=''
