@@ -6,8 +6,15 @@ import LogoImage from "../../images/Logo/logo.png";
 import { useStateContext } from "../../contexts/ContextProvider";
 import { HashLink } from "react-router-hash-link";
 import { Sling as Hamburger, Sling } from "hamburger-react";
+import { useState } from "react";
 
 const NavItem = ({ title, active, onItemClick }) => {
+  const handleItemClick = () => {
+    // Call the provided onItemClick function to handle the click
+    onItemClick();
+
+    // Optionally, you can add code here to close the mobile menu if it's open
+  };
   return (
     <li
       className={`cursor-pointer relative transition-colors list-none ${
@@ -32,15 +39,41 @@ const NavItem = ({ title, active, onItemClick }) => {
 const Nav = () => {
   const { currentColor, handleItemClick, toggleMenu, menuOpen } =
     useStateContext();
+  
+    const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') { 
+      if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
+        setShow(false); 
+      } else { // if scroll up show the navbar
+        setShow(true);  
+      }
+
+      // remember current page location to use in the next move
+      setLastScrollY(window.scrollY); 
+    }
+  };
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
 
+      // cleanup function
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+  
   return (
-    <nav className={`lg:fixed container mx-auto p-5  relative z-50 }`}>
+    <nav
+      className={`${
+        show
+          ? "lg:fixed opacity-100"
+          : "lg:fixed opacity-0 pointer-events-none"
+      } transition-opacity duration-300 ease-in-out container mx-auto p-5 relative z-50`}>
       {/* Mobile */}
 
       <div className='lg:hidden block'>
@@ -76,22 +109,34 @@ const Nav = () => {
             <NavItem
               title='About'
               active={currentColor === "About"}
-              onItemClick={() => handleItemClick("About")}
+              onItemClick={() => {
+                handleItemClick("About");
+                toggleMenu(); // Close the mobile menu after clicking
+              }}
             />
             <NavItem
               title='Service'
               active={currentColor === "Service"}
-              onItemClick={() => handleItemClick("Service")}
+              onItemClick={() => {
+                handleItemClick("Services");
+                toggleMenu(); // Close the mobile menu after clicking
+              }}
             />
             <NavItem
               title='Projects'
               active={currentColor === "Projects"}
-              onItemClick={() => handleItemClick("Projects")}
+              onItemClick={() => {
+                handleItemClick("Projects");
+                toggleMenu(); // Close the mobile menu after clicking
+              }}
             />
             <NavItem
               title='Contact'
               active={currentColor === "Contact"}
-              onItemClick={() => handleItemClick("Contact")}
+              onItemClick={() => {
+                handleItemClick("Contact");
+                toggleMenu(); // Close the mobile menu after clicking
+              }}
             />
           </div>
         </div>

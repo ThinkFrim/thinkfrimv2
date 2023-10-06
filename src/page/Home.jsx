@@ -12,9 +12,8 @@ import aboutImg from "../images/aboutus.svg";
 import video from "../images/video/video.mp4";
 import mail from "../images/icons/contact.svg";
 
-import { serviceData, socialIcons } from "../data/dummy.js";
+import { imageData, serviceData, socialIcons } from "../data/dummy.js";
 
-import CarouselMotion from "../components/carouselMotion/CarouselMotion";
 import "./Home.css";
 import { HashLink } from "react-router-hash-link";
 import { useMediaQuery } from "react-responsive";
@@ -62,7 +61,7 @@ const Home = () => {
             alt=''
             className='hidden lg:block object-cover w-full h-full'
           />
-        </div>  
+        </div>
         <div
           className='container mx-auto pt-16 h-full xl:pt-24'
           data-aos='fade-right'>
@@ -203,9 +202,9 @@ const Home = () => {
               className='text-white px-5 md:px-0 lg:text-xl leading-loose'
               data-aos='fade-down'>
               At Thinkfrim, we specialize in web development and design.
-              <br  className="hidden md:block"/>
+              <br className='hidden md:block' />
               Our passion drives us to create exceptional online experiences.{" "}
-              <br  className="hidden md:block"/>
+              <br className='hidden md:block' />
               We're here to bring your digital ideas to life
             </p>
           </div>
@@ -213,15 +212,38 @@ const Home = () => {
       </div>
 
       {/* Our Projects */}
-      <div className='h-screen bg-secondary-bg p-16' id='Projects'>
+      <div className='min-h-screen bg-secondary-bg p-16' id='Projects'>
         <div>
           <div className='text-center lg:text-left pb-5'>
             <h1 className='text-5xl text-white pb-5'>Projects</h1>
-            <h2 className='text-[#BEBEBE] text-xl'>
-              showcase of our latest projects
-            </h2>
+            <div className='flex flex-col items-center justify-between md:flex-row'>
+              <h2 className='text-[#BEBEBE] text-xl'>
+                showcase of our latest projects
+              </h2>
+              <button className="p-2 bg-underline-bg rounded mt-5">view all projects</button>
+            </div>
           </div>
-          <CarouselMotion />
+          <div className='flex flex-col justify-center items-center gap-20 md:flex-row mt-20'>
+            {imageData.map((items, index) => (
+              <div
+                className='pt-5 flex flex-col justify-center items-center text-white md:items-start'
+                key={index}>
+                <img
+                  src={items.img}
+                  alt=''
+                  className='min-w-[25rem] sm:min-w-full rounded-lg cursor-pointer mx-auto overflow-hidden'
+                  data-aos='fade-down'
+                />
+                <div className='mt-5' data-aos='fade-right'>
+                  <h1 className='my-2'>{items.title}</h1>
+                  <p className=''>{items.info}</p>
+                  <button className='bg-underline-bg p-2 px-5 rounded-md mt-2 text-black'>
+                    <a href="https://hpsvalet.netlify.app/">view project</a>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
