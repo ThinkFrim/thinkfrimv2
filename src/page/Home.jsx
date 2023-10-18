@@ -213,17 +213,19 @@ const Home = () => {
 
       {/* Our Projects */}
       <div className='min-h-screen bg-secondary-bg p-16' id='Projects'>
-        <div>
-          <div className='text-center lg:text-left pb-5'>
+        <div className="text-center">
+          {/* <div className='text-center lg:text-left pb-5'>
             <h1 className='text-5xl text-white pb-5'>Projects</h1>
             <div className='flex flex-col items-center justify-between md:flex-row'>
               <h2 className='text-[#BEBEBE] text-xl'>
                 showcase of our latest projects
               </h2>
-              <button className="p-2 bg-underline-bg rounded mt-5">view all projects</button>
+              <button className='p-2 bg-underline-bg rounded mt-5'>
+                view all projects
+              </button>
             </div>
-          </div>
-          <div className='flex flex-col justify-center items-center gap-20 md:flex-row mt-20'>
+          </div> */}
+          {/* <div className='flex flex-col justify-center items-center gap-20 md:flex-row mt-20'>
             {imageData.map((items, index) => (
               <div
                 className='pt-5 flex flex-col justify-center items-center text-white md:items-start'
@@ -231,19 +233,20 @@ const Home = () => {
                 <img
                   src={items.img}
                   alt=''
-                  className='min-w-[25rem] sm:min-w-full rounded-lg cursor-pointer mx-auto overflow-hidden'
+                  className='min-w-[15rem] sm:min-w-full rounded-lg cursor-pointer mx-auto overflow-hidden'
                   data-aos='fade-down'
                 />
                 <div className='mt-5' data-aos='fade-right'>
                   <h1 className='my-2'>{items.title}</h1>
                   <p className=''>{items.info}</p>
                   <button className='bg-underline-bg p-2 px-5 rounded-md mt-2 text-black'>
-                    <a href="https://hpsvalet.netlify.app/">view project</a>
+                    <a href='https://hpsvalet.netlify.app/'>view project</a>
                   </button>
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
+          <h1 className="text-white text-2xl">Coming Soon ...</h1>
         </div>
       </div>
 

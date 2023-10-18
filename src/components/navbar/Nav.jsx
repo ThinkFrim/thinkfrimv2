@@ -116,10 +116,10 @@ const Nav = () => {
             />
             <NavItem
               title='Service'
-              active={currentColor === "Service"}
+              active={currentColor === "Services"}
               onItemClick={() => {
                 handleItemClick("Services");
-                toggleMenu(); // Close the mobile menu after clicking
+                toggleMenu();
               }}
             />
             <NavItem
@@ -127,7 +127,7 @@ const Nav = () => {
               active={currentColor === "Projects"}
               onItemClick={() => {
                 handleItemClick("Projects");
-                toggleMenu(); // Close the mobile menu after clicking
+                toggleMenu();
               }}
             />
             <NavItem
@@ -135,7 +135,7 @@ const Nav = () => {
               active={currentColor === "Contact"}
               onItemClick={() => {
                 handleItemClick("Contact");
-                toggleMenu(); // Close the mobile menu after clicking
+                toggleMenu();
               }}
             />
           </div>
